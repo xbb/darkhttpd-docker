@@ -18,4 +18,6 @@ COPY --from=build-stage /html /html
 
 ENTRYPOINT ["/darkhttpd"]
 
+EXPOSE 80
+
 CMD ["/html"]
