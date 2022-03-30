@@ -18,4 +18,4 @@ COPY --from=build-stage /html /html
 
 ENTRYPOINT ["/darkhttpd"]
 
-CMD ["/html"]
+CMD ["/html", "--port", "8080"]
