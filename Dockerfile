@@ -1,6 +1,6 @@
 FROM alpine:3.16 AS build-stage
 
-ARG VERSION=v1.13
+ARG VERSION=v1.14
 
 RUN apk add --no-cache gcc make musl-dev && \
     wget -O darkhttpd.zip https://github.com/emikulic/darkhttpd/archive/"${VERSION}".zip \
