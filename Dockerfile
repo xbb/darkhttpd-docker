@@ -1,4 +1,4 @@
-FROM alpine:3.15 AS build-stage
+FROM alpine:3.16 AS build-stage
 
 ARG VERSION=v1.13
 
