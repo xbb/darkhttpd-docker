@@ -1,6 +1,6 @@
-FROM alpine:3.16 AS build-stage
+FROM alpine:3.20 AS build-stage
 
-ARG VERSION=v1.14
+ARG VERSION=v1.16
 
 RUN apk add --no-cache gcc make musl-dev && \
     wget -O darkhttpd.zip https://github.com/emikulic/darkhttpd/archive/"${VERSION}".zip \
@@ -8,6 +8,7 @@ RUN apk add --no-cache gcc make musl-dev && \
     && rm darkhttpd.zip \
     && cd darkhttpd-* \
     && make CFLAGS=-static  \
+    && strip darkhttpd \
     && mkdir /html \
     && echo "darkhttpd" > /html/index.html
 
